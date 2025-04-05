@@ -1,9 +1,9 @@
 *{
     margin: 0px;
-    padding: 4px;
+    padding: px;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .msg {
@@ -32,10 +32,6 @@
     margin-bottom: 1rem;
 }
 
-.form form p {
-    padding: 9px 22px;
-    font-size: 15px;
-}
 
 .form form button {
     width: 44%;
@@ -45,13 +41,9 @@
     font-size: 20px;
 }
 
-.form form p {
-    font-size: 15px;
-    margin-top: 8px;
-}
 
 .form-group {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .container {
@@ -63,22 +55,6 @@
     width: 768px;
     max-height: 100%;
     min-height: 480%;
-}
-
-
-nav {
-    background-color:  rgb(135, 36, 228);
-}
-
-nav li {
-    display: inline-flex;
-}
-
-nav li h1 {
-    display: inline-block;
-    color:  rgb(224, 174, 105);
-    text-decoration: none;
-    padding: 10px;
 }
 
 
