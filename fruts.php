@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Animais</title>
+  <title>Frutas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 </header>
 
   <header class="text-center p-2" style="background-color: #c40af3;">
-    <button class="custom-btn" onclick="playHeaderAudio()">Animals</button>
+    <button class="custom-btn" onclick="playHeaderAudio()">Fruits</button>
 </button>
 
     <audio id="animalsAudio">
@@ -46,17 +46,17 @@
     <div id="carouselExampleControls" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="card text-center shadow" data-name="cat">
-            <img src="img_animals/cat.jpg" class="card-img-top" alt="Gato" onclick="playAudio('cat')">
+          <div class="card text-center shadow" data-name="banana">
+            <img src="img_fruits/banana.jpg" class="card-img-top" alt="Banana" onclick="playAudio('banana')">
             <div class="card-body">
-              <h5 class="card-title">Cat</h5>
+              <h5 class="card-title">Banana</h5>
               <div class="star-bar">
                 <span class="star">★</span>
                 <span class="star">★</span>
                 <span class="star">★</span>
               </div>
               <audio id="catAudio">
-                <source src="audios/cat.mp3" type="audio/mp3">
+                <source src="audios/animals.mp3" type="audio/mp3">
                 Seu navegador não suporta o elemento de áudio.
               </audio>
             </div>
@@ -64,10 +64,10 @@
         </div>
 
         <div class="carousel-item">
-          <div class="card text-center shadow" data-name="dog">
-            <img src="img_animals/dog.avif" class="card-img-top" alt="Cachorro" onclick="playAudio('dog')">
+          <div class="card text-center shadow" data-name="apple">
+            <img src="img_fruts/apple.png" class="card-img-top" alt="Maçã" onclick="playAudio('apple')">
             <div class="card-body">
-              <h5 class="card-title">Dog</h5>
+              <h5 class="card-title">Apple</h5>
               <div class="star-bar">
                 <span class="star">★</span>
                 <span class="star">★</span>

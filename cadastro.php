@@ -46,7 +46,7 @@
     </header>
    
     <div class="form">
-        <form action="login.html" method="post">
+        <form action="loginpage.php" method="post">
             <h1> Cadastre-se </h1>
             <div class="form-group">
                 <label for="name"> Nome completo da criança</label> <br>

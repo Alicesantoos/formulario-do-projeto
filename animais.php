@@ -32,7 +32,7 @@
 </header>
 
   <header class="text-center p-2" style="background-color: #c40af3;">
-    <button class="custom-btn" onclick="playHeaderAudio()">Fruts</button>
+    <button class="custom-btn" onclick="playHeaderAudio()">Animals</button>
 </button>
 
     <audio id="animalsAudio">
@@ -46,10 +46,10 @@
     <div id="carouselExampleControls" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="card text-center shadow" data-name="banana">
-            <img src="img_fruts/banana.jpg" class="card-img-top" alt="Banana" onclick="playAudio('banana')">
+          <div class="card text-center shadow" data-name="cat">
+            <img src="img_animals/cat.jpg" class="card-img-top" alt="Gato" onclick="playAudio('cat')">
             <div class="card-body">
-              <h5 class="card-title">Banana</h5>
+              <h5 class="card-title">Cat</h5>
               <div class="star-bar">
                 <span class="star">★</span>
                 <span class="star">★</span>
@@ -64,10 +64,28 @@
         </div>
 
         <div class="carousel-item">
-          <div class="card text-center shadow" data-name="apple">
-            <img src="img_fruts/apple.png" class="card-img-top" alt="Maçã" onclick="playAudio('apple')">
+          <div class="card text-center shadow" data-name="dog">
+            <img src="img_animals/dog.avif" class="card-img-top" alt="Cachorro" onclick="playAudio('dog')">
             <div class="card-body">
-              <h5 class="card-title">Apple</h5>
+              <h5 class="card-title">Dog</h5>
+              <div class="star-bar">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <audio id="dogAudio">
+                <source src="audios/dog.mp3" type="audio/mp3">
+                Seu navegador não suporta o elemento de áudio.
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card text-center shadow" data-name="dog">
+            <img src="img_animals/dog.avif" class="card-img-top" alt="Cachorro" onclick="playAudio('dog')">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
               <div class="star-bar">
                 <span class="star">★</span>
                 <span class="star">★</span>
@@ -116,6 +134,7 @@
     const clickCounters = {
       cat: 0,
       dog: 0,
+      cow: 0,
       lion: 0
     };
 
