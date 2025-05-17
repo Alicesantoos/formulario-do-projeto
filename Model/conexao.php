@@ -4,8 +4,7 @@ class Conexao {
     private static $username = "root";
     private static $password = "";
     private static $dbname = "mpi";
-    
-    // Método renomeado para 'conexaoBanco'
+
     public static function conexaoBanco() {  
         try {
             $dsn = "mysql:host=" . self::$host . ";dbname=" . self::$dbname . ";charset=utf8";

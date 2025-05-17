@@ -192,12 +192,30 @@ session_start();
 </div>
 
 <div class="d-flex justify-content-center flex-wrap gap-3 mt-5">
-  <a href="cadastro.php" class="btn btn-lg btn-roxo btn-float px-5 py-3 fs-3 botao-custom">
-    <i class="bi bi-fire"></i> Quero participar
-  </a>
-  <a href="loginpage.php" class="btn btn-lg btn-azul btn-balance px-5 py-3 fs-3 botao-custom">
-    <i class="bi bi-star-fill"></i> Já faço parte
-  </a>
+    <?php if (isset($_SESSION['usuario_id'])): ?>
+        <!-- Usuário está logado -->
+        <div class="text-center">
+            <p class="fs-4">Olá, <strong><?= htmlspecialchars($_SESSION['usuario_nome']); ?></strong>! Você está logado.</p>
+            <a href="Controller/logout.php" class="btn btn-lg btn-danger px-5 py-3 fs-4">
+                <i class="bi bi-box-arrow-right"></i> Sair da conta
+            </a>
+        </div>
+    <?php else:?>
+        <!-- Usuário não está logado -->
+        <a href="cadastro.php" class="btn btn-lg btn-roxo btn-float px-5 py-3 fs-3 botao-custom">
+            <i class="bi bi-fire"></i> Quero participar
+        </a>
+        <a href="loginpage.php" class="btn btn-lg btn-azul btn-balance px-5 py-3 fs-3 botao-custom">
+            <i class="bi bi-star-fill"></i> Já faço parte
+        </a>
+    <?php endif; ?> 
+
+    <?php if (!empty($_SESSION['usuario_adm']) && $_SESSION['usuario_adm'] === true): ?>
+        <br>
+        <a href="painel.php" class="btn btn-lg btn-warning px-5 py-3 fs-4">
+            <i class="bi bi-speedometer2"></i> Voltar ao Painel
+        </a>
+    <?php endif; ?>
 </div>
 
 <div class="text-center" style="margin-top: 20px;"></div>
