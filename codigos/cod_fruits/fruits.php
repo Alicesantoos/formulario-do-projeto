@@ -37,7 +37,7 @@
     </audio>
   </header>
 
-  <!-- Carrossel sem avanço automático -->
+
   <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
     <div class="carousel-inner">
 

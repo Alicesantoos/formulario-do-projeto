@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
 
-        // 👨‍👩‍👧 Verificar se é um USUÁRIO
         $stmt = $db->prepare("SELECT * FROM usuarios WHERE email_responsavel = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -45,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
 
-        // ❌ Nenhum encontrado
         $_SESSION['erro-login'] = 'E-mail ou senha incorretos estão incorretos.';
         header('Location: ../loginpage.php');
         exit();

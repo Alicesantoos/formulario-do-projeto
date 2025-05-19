@@ -1,24 +1,21 @@
 <?php
-session_start();  // Certifique-se de iniciar a sessão antes de usar $_SESSION
+session_start();  
 
-include('conexao.php');  // Inclui a classe de conexão
-$db = Conexao::conexaoBanco();  // Alterado para 'conexaoBanco'
+include('conexao.php');  
+$db = Conexao::conexaoBanco();  
 
-// Adicionar usuário
 if (isset($_POST["adicionar"])) {
-    // Coletando os dados do formulário
     $nome_crianca = $_POST["nome_crianca"];
     $nome_responsavel = $_POST["nome_responsavel"];
     $email_responsavel = $_POST["email_responsavel"];
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
-    // Verificar se o e-mail já está cadastrado
     $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->execute([$email_responsavel]);
     if ($stmt->rowCount() > 0) {
         $_SESSION['message-erro'] = 'E-mail já cadastrado.';
     } else {
-        // Inserir no banco
+    
         $stmt = $db->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
         if ($stmt->execute([$nome_crianca, $email_responsavel, $senha])) {
             $_SESSION['message-user-success'] = 'Usuário cadastrado com sucesso!';
@@ -26,7 +23,6 @@ if (isset($_POST["adicionar"])) {
     }
 }
 
-// Atualizar usuário
 if (isset($_POST["editar"])) {
     $id = $_POST["id"];
     $nome_crianca = $_POST["nome_crianca"];
@@ -42,7 +38,6 @@ if (isset($_POST["editar"])) {
     }
 }
 
-// Deletar usuário
 if (isset($_GET["deletar"])) {
     $id = $_GET["deletar"];
     
@@ -52,7 +47,6 @@ if (isset($_GET["deletar"])) {
     }
 }
 
-// Pesquisar usuários
 if (isset($_GET['pesquisar']) && !empty(trim($_GET['pesquisar']))) {
     $termo = '%' . trim($_GET['pesquisar']) . '%';
     $stmt = $db->prepare("SELECT * FROM usuarios WHERE nome LIKE ? OR email LIKE ?");

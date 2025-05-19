@@ -20,18 +20,18 @@
       font-family: cursive;
       font-size: 1.3rem; 
     }
-    /* Estilo para as setas */
+  
     .custom-arrow, .custom-arrow-left {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2.5rem;
+      font-size: 5rem;
       background: transparent;
       border: none;
       color: purple;
       cursor: pointer;
       z-index: 10;
-      display: none; /* começam escondidas */
+      display: none; 
     }
     .custom-arrow {
       right: 5px;
@@ -39,6 +39,18 @@
     .custom-arrow-left {
       left: 5px;
     }
+
+.carousel-inner .card-img-top {
+  width: 80%;        
+  height: 490px;      
+  object-fit: cover;  
+}
+
+.carousel-inner .card {
+  max-width: 2000px;   
+  margin: 0 auto;     
+}
+
   </style>
 </head>
 
