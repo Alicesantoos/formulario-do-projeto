@@ -1,3 +1,6 @@
+<?php include('../../Controller/restrito.php') ?>
+
+
 <!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
@@ -41,7 +44,7 @@
     }
 
 .carousel-inner .card-img-top {
-  width: 80%;        
+  width: 100%;        
   height: 490px;      
   object-fit: cover;  
 }
@@ -51,13 +54,20 @@
   margin: 0 auto;     
 }
 
+.card[data-name="cow"] .card-img-top {
+  height: 400px;
+}
+
+.card[data-name="fish"] .card-img-top {
+  height: 410px;
+}
+
   </style>
 </head>
 
 <body>
-
   <header class="cabecalho">
-    <a href="../cod_visaogeral.php" class="btn btn-topo">
+    <a href="../../index.php" class="btn btn-topo">
       <h1 class="bi bi-arrow-left-circle-fill" style="font-size: 1.3rem;">Voltar</h1> 
     </a>
   </header> 
@@ -86,9 +96,7 @@
               <source src="../../audios/audios_animais/cat.mp3" type="audio/mp3">
             </audio>
           </div>
-      
 
-      
           <button class="custom-arrow" id="arrow-cat" onclick="nextSlide()">
             <i class="bi bi-arrow-right-circle-fill"></i>
           </button>
@@ -197,6 +205,27 @@
 
     </div>
   </div>
+  <div class="carousel-item">
+  <div class="card text-center shadow" style="background-color: #fff0fb;">
+    <div class="card-body">
+      <h1 class="mb-4">Parabéns! 🎉</h1>
+      <p class="mb-4">Você completou todos os animais! Estoure os balões para comemorar!</p>
+
+      <div class="balloons d-flex justify-content-center flex-wrap gap-3">
+        <div class="balloon" onclick="popBalloon(this)"></div>
+        <div class="balloon" onclick="popBalloon(this)"></div>
+        <div class="balloon" onclick="popBalloon(this)"></div>
+        <div class="balloon" onclick="popBalloon(this)"></div>
+        <div class="balloon" onclick="popBalloon(this)"></div>
+      </div>
+
+      <audio id="popSound">
+        <source src="../../audios/audios_animais/pop.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+
 
   <audio id="arrowSound">
     <source src="../../audios/audios_animais/seta_som.mp3" type="audio/mp3">

@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -143,37 +144,55 @@ session_start();
     <h1>Meu primeiro Inglês</h1>
 </header>
 
-  <section class="sobre-site py-5 text-center">
-    <div class="container">
-      <h2 class="mb-4">Sobre o site</h2>
-      <p class="lead">
-        O "Meu primeiro Inglês" é um site projetada para ser divertido e educativo, feito para ajudar crianças de qualquer idade a darem os primeiros passos na Língua Inglesa. Aqui, elas aprendem com atividades lúdicas, imagens coloridas e muita interação!
-      </p>
+<?php if (isset($_SESSION['usuario_id'])): ?>
+    <div class="text-center mt-3">
+        <p class="fs-4">Oi <strong><?= htmlspecialchars($_SESSION['usuario_nome']); ?></strong>, que bom que você chegou!</p>
     </div>
-  </section>
+<?php endif; ?>
+
+
+<section class="sobre-site py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <h2 class="mb-4">Sobre o site</h2>
+        <p class="lead">
+          O "Meu Primeiro Inglês" é um site projetado para ser divertido e educativo, feito para ajudar crianças de qualquer idade a darem os primeiros passos na Língua Inglesa. Aqui, elas aprendem com atividades lúdicas, imagens coloridas e muita interação!
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="imagens/img_site/Logo.png" alt="Logo do site" class="img-fluid" style="max-width: 250px;">
+      </div>
+    </div>
+  </div>
+</section>
   
   <div class="container text-center mt-5">
-  <h2 class="fw-bold" style="color:rgb(183, 144, 29);">Aprenda conteúdos como :</h2>
+  <h2 class="fw-bold" style="color:rgb(183, 144, 29);">Aprenda nossos conteúdos :</h2>
 </div>
 
 
 <div class="container mt-4">
   <div class="row">
       <div class="col-md-4">
+           <a href="codigos/cod_animais/animais.php" style="text-decoration: none;">
           <div class="card">
-              <img src="imagens/img_site/img_cor.jpg" class="card-img-top" alt="Crianças se divertindo">
+              <img src="imagens/img_site/img_animais.avif" class="card-img-top" alt="Animais">
               <div class="card-body">
-                  <p class="card-text"> As cores em Inglês.</p>
+                  <p class="card-text"> Nome dos animais em inglês.</p>
               </div>
           </div>
+           </a>
       </div>
       <div class="col-md-4">
+        <a href="codigos/cod_fruits/fruits.php" style="text-decoration: none;">
           <div class="card">
-              <img src="imagens/img_site/img_animais.avif" class="card-img-top" alt="Aula de inglês interativa">
+              <img src="imagens/img_site/img_fruits.jpg" class="card-img-top" alt="Frutas">
               <div class="card-body">
-                  <p class="card-text"> Nome dos animais em Inglês.</p>
+                  <p class="card-text"> Nome das frutas.</p>
               </div>
           </div>
+        </a>
       </div>
       <div class="col-md-4">
           <div class="card">
@@ -186,17 +205,19 @@ session_start();
   </div>
 </div>
 
-<div class="container d-flex justify-content-center mt-5">
-  <img src="imagens/img_site/Gigi_balao.png" alt="Mascote fofo" class="mascote-img">
-  </div>
+    <?php if(isset($_SESSION['usuario_id'])): ?>
+    <?php else: ?>
+    <div class="container d-flex justify-content-center mt-5">
+        <img src="imagens/img_site/Gigi_balao.png" alt="Mascote fofo" class="mascote-img">
+    </div>
+    <?php endif;?>
 </div>
 
 <div class="d-flex justify-content-center flex-wrap gap-3 mt-5">
-    <?php if (isset($_SESSION['usuario_id'])): ?>
+    <?php if (isset($_SESSION['usuario_id'])): ?>''
         
         <div class="text-center">
-            <p class="fs-4">Olá, <strong><?= htmlspecialchars($_SESSION['usuario_nome']); ?></strong>! Você está logado.</p>
-            <a href="Controller/logout.php" class="btn btn-lg btn-danger px-5 py-3 fs-4">
+            <a href="Controller/logout.php" class="btn btn-lg btn-danger px-5 py-4 fs-3">
                 <i class="bi bi-box-arrow-right"></i> Sair da conta
             </a>
         </div>

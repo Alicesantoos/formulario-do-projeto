@@ -1,3 +1,5 @@
+<?php include('Model/login.php'); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +17,7 @@
     <style>
         body {
          font-family: 'Fredoka', sans-serif;
-         }
+        }
        .cabecalho {
            background-color: #b159be;
            padding: 10px;
@@ -45,7 +47,7 @@
 
     <div class="form">
         <form action="Model/login.php" method="post">
-            <h1> Conectando </h1>
+            <h1> Login </h1>
      
             <div class="form-group">
                 <label for="Email"> E-mail do responsável</label> <br>

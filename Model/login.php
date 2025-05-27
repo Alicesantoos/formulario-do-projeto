@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($admin && password_verify($senha, $admin['senha'])) {
             $_SESSION['user_type'] = 'adm';
             $_SESSION['adm_id'] = $admin['id'];
-            $_SESSION['usuario_nome'] = $admin['nome'] ?? 'Administrador';
+            $_SESSION['usuario_nome'] = $admin['nome'];
 
             header('Location: ../painel.php');
             exit();
