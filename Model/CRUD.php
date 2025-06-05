@@ -10,16 +10,16 @@ if (isset($_POST["adicionar"])) {
     $email_responsavel = $_POST["email_responsavel"];
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
-    $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $stmt = $db->prepare("SELECT * FROM usuarios WHERE email_responsavel = ?");
     $stmt->execute([$email_responsavel]);
     if ($stmt->rowCount() > 0) {
         $_SESSION['message-erro'] = 'E-mail já cadastrado.';
     } else {
     
-        $stmt = $db->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-        if ($stmt->execute([$nome_crianca, $email_responsavel, $senha])) {
+        $stmt = $db->prepare("INSERT INTO usuarios (nome_crianca, nome_responsavel, email_responsavel, senha) VALUES (?, ?, ?, ?)");
+        if ($stmt->execute([$nome_crianca, $nome_responsavel, $email_responsavel, $senha])) {
             $_SESSION['message-user-success'] = 'Usuário cadastrado com sucesso!';
-        }
+        }   
     }
 }
 
@@ -49,7 +49,7 @@ if (isset($_GET["deletar"])) {
 
 if (isset($_GET['pesquisar']) && !empty(trim($_GET['pesquisar']))) {
     $termo = '%' . trim($_GET['pesquisar']) . '%';
-    $stmt = $db->prepare("SELECT * FROM usuarios WHERE nome LIKE ? OR email LIKE ?");
+    $stmt = $db->prepare("SELECT * FROM usuarios WHERE nome_crianca LIKE ? OR email_responsavel LIKE ?");
     $stmt->execute([$termo, $termo]);
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {

@@ -8,13 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
+    // Validação dos campos
     if (empty($email) || empty($senha)) {
-        $_SESSION['erro'] = 'Preencha todos os campos.';
-        header('Location: ../View/loginpage.php');
+        $_SESSION['erro-login'] = 'Preencha todos os campos.';
+        header('Location: ../loginpage.php');
         exit();
     }
 
     try {
+        // Verificar se é administrador
         $stmt = $db->prepare("SELECT * FROM adm WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -24,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_type'] = 'adm';
             $_SESSION['adm_id'] = $admin['id'];
             $_SESSION['usuario_nome'] = $admin['nome'];
-
             header('Location: ../painel.php');
             exit();
         }
 
+        // Verificar se é usuário comum
         $stmt = $db->prepare("SELECT * FROM usuarios WHERE email_responsavel = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -39,17 +41,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['usuario_nome'] = $usuario['nome_crianca'];
             $_SESSION['usuario_email'] = $usuario['email_responsavel'];
-
             header('Location: ../index.php');
             exit();
         }
 
-        $_SESSION['erro-login'] = 'E-mail ou senha incorretos estão incorretos.';
+        // Nenhum usuário encontrado
+        $_SESSION['erro-login'] = 'E-mail ou senha incorretos. Por favor, tente novamente ou cadastre-se.';
         header('Location: ../loginpage.php');
         exit();
 
     } catch (PDOException $e) {
-        echo "Erro ao fazer login: " . $e->getMessage();
+        $_SESSION['erro-login'] = 'Erro no servidor ao tentar fazer login. Tente novamente mais tarde.';
+        header('Location: ../loginpage.php');
+        exit();
     }
 }
 ?>

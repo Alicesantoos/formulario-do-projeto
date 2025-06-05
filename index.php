@@ -1,8 +1,6 @@
 <?php
 session_start();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,6 +21,7 @@ session_start();
           background-color: #b159be;
           padding: 10px;
           text-align: center;
+          position: relative;
       }
       .cabecalho h1 {
           color: #cbad74;
@@ -135,13 +134,88 @@ session_start();
   animation: mascoteFloat 2.5s ease-in-out infinite;
 }
 
+#OpenE{
+    border-radius: 20px;
+    position: fixed;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:rgb(219, 82, 82);
+    max-width: 200px;
+    width: 100%;
+    padding: 20px;
+    z-index: 999;
+}
+
+#excluir-conteudo{
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#OpenE #Sim{
+    border: none;
+    background-color: rgb(219, 82, 82);
+    border-radius: 10px;
+    width: 50px;
+    transition: 0.3s;
+}
+
+#OpenE #Nao{
+    border: none;
+    border-radius: 10px;
+    width: 50px;
+    background-color:#fff;
+}
+
+#OpenE #Sim:hover{
+    border: none;
+    border-radius: 10px;
+    width: 50px;
+    background-color:#fff;
+}
+
+.botao-excluir{
+    display: flex;
+    position: absolute;
+    max-width: 115px;
+    width: 100%;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    top: 25%;
+    border: none;
+    background-color:#a545b4;
+    border-radius: 10px;
+}
+
+.botao-excluir:hover{
+    background-color:#a862b3;
+}
+
+#content-painel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 
   </style>
   </head>
 <body>
 
-  <header class="cabecalho">
+<?php if (isset($_GET['erro']) && $_GET['erro'] == 'login'): ?>
+  <div class="alert alert-warning text-center fs-5" role="alert">
+    ⚠️ Você precisa fazer o login para acessar esse conteúdo.
+  </div>
+<?php endif; ?>
+
+<header class="cabecalho">
     <h1>Meu primeiro Inglês</h1>
+    <?php if (isset($_SESSION['usuario_id'])): ?>
+<button class="botao-excluir" onclick="OpenExclude()">Excluir Conta</button>
+    <?php endif; ?>
 </header>
 
 <?php if (isset($_SESSION['usuario_id'])): ?>
@@ -150,6 +224,25 @@ session_start();
     </div>
 <?php endif; ?>
 
+<div id="fundo" style="
+display: none;
+background-color:rgb(0, 0, 0, 0.5);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:998;
+">
+</div>
+
+<div id="OpenE" style="display: none;">
+    <div id="excluir-conteudo">
+        <p>Você realmente deseja nos deixar?! :(</p>
+        <button id="Sim" onclick="ConfirmExclude()" >Sim</button>
+        <button class="botao" id="Nao" onclick="CloseExclude()" >Não</button>
+    </div>
+</div>
 
 <section class="sobre-site py-5">
   <div class="container">
@@ -185,22 +278,24 @@ session_start();
            </a>
       </div>
       <div class="col-md-4">
-        <a href="codigos/cod_fruits/fruits.php" style="text-decoration: none;">
+        <a href="codigos/cod_cores/cores.php" style="text-decoration: none;">
+          <div class="card">
+              <img src="imagens/img_site/img_cor.jpg" class="card-img-top" alt="Cores">
+              <div class="card-body">
+                  <p class="card-text"> As cores.</p>
+              </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+          <a href="codigos/cod_fruits/fruits.php" style="text-decoration: none;">
           <div class="card">
               <img src="imagens/img_site/img_fruits.jpg" class="card-img-top" alt="Frutas">
               <div class="card-body">
                   <p class="card-text"> Nome das frutas.</p>
               </div>
           </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-          <div class="card">
-              <img src="imagens/img_site/imagem3.jpg" class="card-img-top" alt="Aprendizado divertido">
-              <div class="card-body">
-                  <p class="card-text">Primeiras frases.</p>
-              </div>
-          </div>
+          </a>
       </div>
   </div>
 </div>
@@ -214,7 +309,7 @@ session_start();
 </div>
 
 <div class="d-flex justify-content-center flex-wrap gap-3 mt-5">
-    <?php if (isset($_SESSION['usuario_id'])): ?>''
+    <?php if (isset($_SESSION['user_type'])): ?>
         
         <div class="text-center">
             <a href="Controller/logout.php" class="btn btn-lg btn-danger px-5 py-4 fs-3">
@@ -231,10 +326,10 @@ session_start();
         </a>
     <?php endif; ?> 
 
-    <?php if (!empty($_SESSION['usuario_adm']) && $_SESSION['usuario_adm'] === true): ?>
+    <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'): ?>
         <br>
         <a href="painel.php" class="btn btn-lg btn-warning px-5 py-3 fs-4">
-            <i class="bi bi-speedometer2"></i> Voltar ao Painel
+            <i class="bi bi-speedometer2" id="content-painel"></i> Voltar ao Painel
         </a>
     <?php endif; ?>
 </div>
@@ -244,6 +339,28 @@ session_start();
 </div>
 </div>
 
+<script>
+  setTimeout(() => {
+    const alerta = document.querySelector('.alert');
+    if (alerta) alerta.style.display = 'none';
+  }, 6000);
+</script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    
+    function OpenExclude() {
+        document.getElementById('OpenE').style.display = 'flex';
+        document.getElementById('fundo').style.display = 'block';
+    }
+
+    function CloseExclude() {
+        document.getElementById('OpenE').style.display = 'none';
+        document.getElementById('fundo').style.display = 'none';
+    }
+
+    function ConfirmExclude() {
+        window.location.href = "Model/excluir_usuario.php";
+    }
+</script>
 </html>

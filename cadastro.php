@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu primeiro Inglês</title>
+    <title>Meu primeiro Inglês - Cadastro</title>
     <link rel="stylesheet" href="estilo/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
     <header class="cabecalho">
         <h2>Meu primeiro Inglês</h2>
         <a href="index.php" class="btn btn-topo">
-            <i class="bi bi-house-door-fill" style="font-size: 1.2rem;"></i> Início
+            <h5 class="bi bi-house-door-fill" style="font-size: 1.2rem;">Início</h5>
         </a>
     </header>
    
@@ -55,7 +55,7 @@
             <h1> Cadastre-se </h1>
             <div class="form-group">
                 <label for="nome_crianca"> Nome completo da criança</label> <br>
-                <input type="text" id="nome_crianca" name="nome_crianca" placeholder="Escreva seu nome completo" class="form-control" >
+                <input type="text" id="nome_crianca" name="nome_crianca" placeholder="Escreva seu nome completo" class="form-control">
             </div>
 
             <div class="form-group">

@@ -13,7 +13,7 @@ if (!isset($_SESSION['usuario_id'])) {
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Primeiro Inglês - Frutas</title>
+  <title>Meu Primeiro Inglês - Cores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../estilo/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -106,9 +106,9 @@ if (!isset($_SESSION['usuario_id'])) {
   </header> 
 
   <header class="text-center p-2" style="background-color: #c40af3;">
-    <button id="fruitsBtn" class="custom-btn" onclick="playHeaderAudio()">Fruits</button>
-    <audio id="fruitsAudio">
-      <source src="../../audios/audios_fruits/audio_fruits.mp3" type="audio/mp3">
+    <button id="colorsBtn" class="custom-btn" onclick="playHeaderAudio()">Colors</button>
+    <audio id="colorsAudio">
+      <source src="../../audios/audios_colors/audio_colors.mp3" type="audio/mp3">
     </audio>
   </header>
 
@@ -116,116 +116,116 @@ if (!isset($_SESSION['usuario_id'])) {
     <div class="carousel-inner">
 
       <div class="carousel-item active">
-        <div class="card text-center shadow" data-name="banana" style="position: relative;">
-          <img src="../../imagens/img_fruits/banana.jpg" class="card-img-top" alt="Banana" onclick="playAudio('banana')">
+        <div class="card text-center shadow" data-name="red" style="position: relative;">
+          <img src="../../imagens/img_colors/img_red.jpg" class="card-img-top" alt="Vermelho" onclick="playAudio('red')">
           <div class="card-body">
-            <h5 class="card-title">Banana</h5>
+            <h5 class="card-title">Red</h5>
             <div class="star-bar">
               <span class="star">★</span>
               <span class="star">★</span>
               <span class="star">★</span>
             </div>
-            <audio id="bananaAudio">
-              <source src="../../audios/audios_fruits/audio_banana.mp3" type="audio/mp3">
+            <audio id="redAudio">
+              <source src="../../audios/audios_colors/audio_red.mp3" type="audio/mp3">
             </audio>
           </div>
-          <button class="arrow-button" style="right: 5px;" id="arrow-banana" onclick="nextSlide()">
+          <button class="arrow-button" style="right: 5px;" id="arrow-red" onclick="nextSlide()">
             <i class="bi bi-arrow-right-circle-fill"></i>
           </button>
         </div>
       </div>
 
       <div class="carousel-item">
-        <div class="card text-center shadow" data-name="apple" style="position: relative;">
-          <img src="../../imagens/img_fruits/img_maçã.jpg" class="card-img-top" alt="Maçã" onclick="playAudio('apple')">
+        <div class="card text-center shadow" data-name="blue" style="position: relative;">
+          <img src="../../imagens/img_colors/img_blue.png" class="card-img-top" alt="Azul" onclick="playAudio('blue')">
           <div class="card-body">
-            <h5 class="card-title">Apple</h5>
+            <h5 class="card-title">Blue</h5>
             <div class="star-bar">
               <span class="star">★</span>
               <span class="star">★</span>
               <span class="star">★</span>
             </div>
-            <audio id="appleAudio">
-              <source src="../../audios/audios_fruits/audio_maça.mp3" type="audio/mp3">
+            <audio id="blueAudio">
+              <source src="../../audios/audios_colors/audio_blue.mp3" type="audio/mp3">
             </audio>
           </div>
 
-          <button class="arrow-button" style="left: 5px;" id="arrow-left-apple" onclick="prevSlide()">
+          <button class="arrow-button" style="left: 5px;" id="arrow-left-blue" onclick="prevSlide()">
             <i class="bi bi-arrow-left-circle-fill"></i>
           </button>
-          <button class="arrow-button" style="right: 5px;" id="arrow-apple" onclick="nextSlide()">
+          <button class="arrow-button" style="right: 5px;" id="arrow-blue" onclick="nextSlide()">
             <i class="bi bi-arrow-right-circle-fill"></i>
           </button>
         </div>
       </div>
 
             <div class="carousel-item">
-        <div class="card text-center shadow" data-name="mango" style="position: relative;">
-          <img src="../../imagens/img_fruits/img_manga.jpg" class="card-img-top" alt="Manga" onclick="playAudio('mango')">
+        <div class="card text-center shadow" data-name="green" style="position: relative;">
+          <img src="../../imagens/img_colors/img_green.png" class="card-img-top" alt="Verde" onclick="playAudio('green')">
           <div class="card-body">
-            <h5 class="card-title">Mango</h5>
+            <h5 class="card-title">Green</h5>
             <div class="star-bar">
               <span class="star">★</span>
               <span class="star">★</span>
               <span class="star">★</span>
             </div>
-            <audio id="mangoAudio">
-              <source src="../../audios/audios_fruits/audio_mango.mp3" type="audio/mp3">
+            <audio id="greenAudio">
+              <source src="../../audios/audios_colors/audio_green.mp3" type="audio/mp3">
             </audio>
           </div>
 
-          <button class="arrow-button" style="left: 5px;" id="arrow-left-mango" onclick="prevSlide()">
+          <button class="arrow-button" style="left: 5px;" id="arrow-left-green" onclick="prevSlide()">
             <i class="bi bi-arrow-left-circle-fill"></i>
           </button>
-          <button class="arrow-button" style="right: 5px;" id="arrow-mango" onclick="nextSlide()">
+          <button class="arrow-button" style="right: 5px;" id="arrow-green" onclick="nextSlide()">
             <i class="bi bi-arrow-right-circle-fill"></i>
           </button>
         </div>
       </div>
 
             <div class="carousel-item">
-        <div class="card text-center shadow" data-name="orange" style="position: relative;">
-          <img src="../../imagens/img_fruits/img_laranja.jpg" class="card-img-top" alt="Laranja" onclick="playAudio('orange')">
+        <div class="card text-center shadow" data-name="yellow" style="position: relative;">
+          <img src="../../imagens/img_colors/img_yellow.png" class="card-img-top" alt="Amarelo" onclick="playAudio('yellow')">
           <div class="card-body">
-            <h5 class="card-title">Orange</h5>
+            <h5 class="card-title">Yellow</h5>
             <div class="star-bar">
               <span class="star">★</span>
               <span class="star">★</span>
               <span class="star">★</span>
             </div>
-            <audio id="orangeAudio">
-              <source src="../../audios/audios_fruits/audio_laranja.mp3" type="audio/mp3">
+            <audio id="yellowAudio">
+              <source src="../../audios/audios_colors/audio_yellow.mp3" type="audio/mp3">
             </audio>
           </div>
 
-          <button class="arrow-button" style="left: 5px;" id="arrow-left-orange" onclick="prevSlide()">
+          <button class="arrow-button" style="left: 5px;" id="arrow-left-yellow" onclick="prevSlide()">
             <i class="bi bi-arrow-left-circle-fill"></i>
           </button>
-          <button class="arrow-button" style="right: 5px;" id="arrow-orange" onclick="nextSlide()">
+          <button class="arrow-button" style="right: 5px;" id="arrow-yellow" onclick="nextSlide()">
             <i class="bi bi-arrow-right-circle-fill"></i>
           </button>
         </div>
       </div>
 
             <div class="carousel-item">
-        <div class="card text-center shadow" data-name="strawberry" style="position: relative;">
-          <img src="../../imagens/img_fruits/img_strawberry.jpg" class="card-img-top" alt="Morango" onclick="playAudio('strawberry')">
+        <div class="card text-center shadow" data-name="pink" style="position: relative;">
+          <img src="../../imagens/img_colors/img_pink.png" class="card-img-top" alt="Rosa" onclick="playAudio('pink')">
           <div class="card-body">
-            <h5 class="card-title">Strawberry</h5>
+            <h5 class="card-title">Pink</h5>
             <div class="star-bar">
               <span class="star">★</span>
               <span class="star">★</span>
               <span class="star">★</span>
             </div>
-            <audio id="strawberryAudio">
-              <source src="../../audios/audios_fruits/audio_strawberry.mp3" type="audio/mp3">
+            <audio id="pinkAudio">
+              <source src="../../audios/audios_colors/audio_pink.mp3" type="audio/mp3">
             </audio>
           </div>
 
-                    <button class="arrow-button" style="left: 5px;" id="arrow-left-strawberry" onclick="prevSlide()">
+                    <button class="arrow-button" style="left: 5px;" id="arrow-left-pink" onclick="prevSlide()">
             <i class="bi bi-arrow-left-circle-fill"></i>
           </button>
-          <button class="arrow-button" style="right: 5px;" id="arrow-strawberry" onclick="nextSlide()">
+          <button class="arrow-button" style="right: 5px;" id="arrow-pink" onclick="nextSlide()">
             <i class="bi bi-arrow-right-circle-fill"></i>
           </button>
         </div>
@@ -235,7 +235,7 @@ if (!isset($_SESSION['usuario_id'])) {
   <div class="card text-center shadow" style="background-color: #fff0fb;">
     <div class="card-body">
       <h1 class="mb-3">🎉 Parabéns! 🎉</h1>
-      <p class="lead mb-4">Você aprendeu as frutas!</p>
+      <p class="lead mb-4">Você aprendeu os animais!🐾</p>
 
       <img src="../../imagens/trofeú.webp" alt="Troféu" style="width: 150px;" class="mb-3">
 
@@ -268,17 +268,17 @@ if (!isset($_SESSION['usuario_id'])) {
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  const allSlides = ['banana', 'apple', 'mango', 'orange', 'strawberry', 'parabens'];
+  const allSlides = ['red', 'blue', 'green', 'yellow', 'pink', 'parabens'];
 
   let clickCounters = {
-    banana: 0,
-    apple: 0,
-    mango: 0,
-    orange: 0,
-    strawberry: 0
+    red: 0,
+    blue: 0,
+    green: 0,
+    yellow: 0,
+    pink: 0
   };
 
-  const visitedSlides = new Set(['banana']); 
+  const visitedSlides = new Set(['red']); 
 
   function playAudio(nome) {
     const audio = document.getElementById(nome + 'Audio');
@@ -309,7 +309,7 @@ if (!isset($_SESSION['usuario_id'])) {
       const arrowSound = document.getElementById("arrowSound");
       if (arrowSound) arrowSound.play();
 
-      const todosCompletos = allSlides.slice(0, 5).every(fruit => visitedSlides.has(fruit));
+      const todosCompletos = allSlides.slice(0, 5).every(color => visitedSlides.has(color));
       if (todosCompletos) {
         setTimeout(() => {
           const carousel = bootstrap.Carousel.getOrCreateInstance(document.querySelector('#carouselExampleControls'));
@@ -346,8 +346,8 @@ if (!isset($_SESSION['usuario_id'])) {
 
   const carouselEl = document.querySelector('#carouselExampleControls');
   carouselEl.addEventListener('slid.bs.carousel', () => {
-    if (fruitsBtn) {
-      fruitsBtn.style.display = isLastSlide ? 'none' : 'inline-block';
+    if (colorsBtn) {
+      animalsBtn.style.display = isLastSlide ? 'none' : 'inline-block';
     }
 
     const activeCard = document.querySelector('.carousel-item.active .card');
@@ -373,7 +373,7 @@ if (!isset($_SESSION['usuario_id'])) {
   });
 
   function playHeaderAudio() {
-    const headerAudio = document.getElementById("fruitsAudio");
+    const headerAudio = document.getElementById("colorsAudio");
     if (headerAudio) headerAudio.play();
   }
 
