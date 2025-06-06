@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro Inglês - Cadastro</title>
-    <link rel="stylesheet" href="estilo/css/style.css">
+    <link rel="stylesheet" href="../estilo/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
 
-        body {
+        body { 
          font-family: 'Fredoka', sans-serif;
          }
        .cabecalho {
@@ -45,37 +46,37 @@
 
     <header class="cabecalho">
         <h2>Meu primeiro Inglês</h2>
-        <a href="index.php" class="btn btn-topo">
+        <a href="../index.php" class="btn btn-topo">
             <h5 class="bi bi-house-door-fill" style="font-size: 1.2rem;">Início</h5>
         </a>
     </header>
    
     <div class="form">
-        <form action="Model/cadastrar.php" method="POST">
+        <form action="../Model/cadastrar.php" method="POST">
             <h1> Cadastre-se </h1>
             <div class="form-group">
                 <label for="nome_crianca"> Nome completo da criança</label> <br>
-                <input type="text" id="nome_crianca" name="nome_crianca" placeholder="Escreva seu nome completo" class="form-control">
+                <input type="text" id="nome_crianca" name="nome_crianca" placeholder="Escreva seu nome completo" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="nome_responsavel"> Nome completo do responsável</label> <br>
-                <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Escreva seu nome completo" class="form-control" >
+                <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Escreva seu nome completo" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="email_responsavel"> E-mail do responsável</label> <br>
-                <input type="email" id="email_responsavel" name="email_responsavel" placeholder="Escreva seu e-mail" class="form-control" >
+                <input type="email" id="email_responsavel" name="email_responsavel" placeholder="Escreva seu e-mail" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="senha"> Senha </label> <br>
-                <input type="password" id="senha" name="senha" placeholder="5 caracteres" class="form-control" >
+                <input type="password" id="senha" name="senha" placeholder="5 caracteres" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="confirme_senha"> Confirme senha</label> <br>
-                <input type="password" id="confirme_senha" name="confirme_senha" placeholder="Confirme sua senha" class="form-control" >
+                <input type="password" id="confirme_senha" name="confirme_senha" placeholder="Confirme sua senha" class="form-control" required>
             </div><br>
         
             <button type="submit" class="btn font-weight-bold">Criar</button>

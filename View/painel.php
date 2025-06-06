@@ -1,4 +1,7 @@
-<?php include('Model/CRUD.php');?>
+
+<?php include('../Model/CRUD.php');
+include('../Controller/restrito.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,7 +30,7 @@
 
 <div class="container py-4">
     <div class="voltar">
-        <button><a href="index.php" class="voltar-content">Página Principal</a></button>
+        <button><a href="../index.php" class="voltar-content">Página Principal</a></button>
     </div>
     <h2 class="text-center mb-4">Painel de Administração de Usuários</h2>
 
@@ -70,7 +73,6 @@
     </div>
   </div>
 
-  <!-- Campo de pesquisa -->
   <form method="get" class="mb-3">
     <div class="input-group">
       <input type="text" name="pesquisar" class="form-control" placeholder="Pesquisar por nome ou email">
@@ -78,7 +80,6 @@
     </div>
   </form>
 
-  <!-- Tabela de usuários -->
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead class="table-dark">
@@ -128,13 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const nomeResponsavel = botao.getAttribute('data-nome-responsavel');
       const emailResponsavel = botao.getAttribute('data-email-responsavel');
 
-      // Preencher o formulário
       document.querySelector('input[name="id"]').value = id;
       document.querySelector('input[name="nome_crianca"]').value = nomeCrianca;
       document.querySelector('input[name="nome_responsavel"]').value = nomeResponsavel;
       document.querySelector('input[name="email_responsavel"]').value = emailResponsavel;
 
-      // Alterar o botão de envio para modo "editar"
       const botaoForm = document.querySelector('form button[type="submit"]');
       botaoForm.name = 'editar';
       botaoForm.textContent = 'Atualizar';

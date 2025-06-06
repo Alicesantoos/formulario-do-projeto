@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($senha !== $confirme_senha) {
         $_SESSION['senha_erro'] = 'As senhas não coincidem!';
-        header('Location: ../cadastro.php');
+        header('Location: ../View/cadastro.php');
         exit;
     }
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ]);
 
     if ($sucesso) {
-        header('Location: ../loginpage.php');
+        header('Location: ../View/loginpage.php');
         exit;
     }
 ?>

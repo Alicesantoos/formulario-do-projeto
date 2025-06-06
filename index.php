@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu primeiro Inglês</title>
+    <title>Meu Primeiro Inglês</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -268,7 +268,7 @@ z-index:998;
 <div class="container mt-4">
   <div class="row">
       <div class="col-md-4">
-           <a href="codigos/cod_animais/animais.php" style="text-decoration: none;">
+           <a href="view/cod_animais/animais.php" style="text-decoration: none;">
           <div class="card">
               <img src="imagens/img_site/img_animais.avif" class="card-img-top" alt="Animais">
               <div class="card-body">
@@ -278,7 +278,7 @@ z-index:998;
            </a>
       </div>
       <div class="col-md-4">
-        <a href="codigos/cod_cores/cores.php" style="text-decoration: none;">
+        <a href="view/cod_colors/colors.php" style="text-decoration: none;">
           <div class="card">
               <img src="imagens/img_site/img_cor.jpg" class="card-img-top" alt="Cores">
               <div class="card-body">
@@ -288,7 +288,7 @@ z-index:998;
         </a>
       </div>
       <div class="col-md-4">
-          <a href="codigos/cod_fruits/fruits.php" style="text-decoration: none;">
+          <a href="View/cod_fruits/fruits.php" style="text-decoration: none;">
           <div class="card">
               <img src="imagens/img_site/img_fruits.jpg" class="card-img-top" alt="Frutas">
               <div class="card-body">
@@ -318,17 +318,17 @@ z-index:998;
         </div>
     <?php else:?>
         
-        <a href="cadastro.php" class="btn btn-lg btn-roxo btn-float px-5 py-3 fs-3 botao-custom">
+        <a href="View/cadastro.php" class="btn btn-lg btn-roxo btn-float px-5 py-3 fs-3 botao-custom">
             <i class="bi bi-fire"></i> Quero participar
         </a>
-        <a href="loginpage.php" class="btn btn-lg btn-azul btn-balance px-5 py-3 fs-3 botao-custom">
+        <a href="View/loginpage.php" class="btn btn-lg btn-azul btn-balance px-5 py-3 fs-3 botao-custom">
             <i class="bi bi-star-fill"></i> Já faço parte
         </a>
     <?php endif; ?> 
 
     <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'adm'): ?>
         <br>
-        <a href="painel.php" class="btn btn-lg btn-warning px-5 py-3 fs-4">
+        <a href="View/painel.php" class="btn btn-lg btn-warning px-5 py-3 fs-4">
             <i class="bi bi-speedometer2" id="content-painel"></i> Voltar ao Painel
         </a>
     <?php endif; ?>
