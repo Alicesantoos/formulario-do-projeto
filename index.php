@@ -219,8 +219,11 @@ session_start();
 </header>
 
 <?php if (isset($_SESSION['usuario_id'])): ?>
+    <?php
+        $primeiro_nome = explode(" ", $_SESSION['usuario_nome'])[0];
+    ?>
     <div class="text-center mt-3">
-        <p class="fs-4">Oi <strong><?= htmlspecialchars($_SESSION['usuario_nome']); ?></strong>, que bom que você chegou!</p>
+        <p class="fs-4">Oi <strong><?= htmlspecialchars($primeiro_nome); ?></strong>, que bom que você chegou!</p>
     </div>
 <?php endif; ?>
 
@@ -360,7 +363,7 @@ z-index:998;
     }
 
     function ConfirmExclude() {
-        window.location.href = "Model/excluir_usuario.php";
+        window.location.href = "Model/excluirusuario.php";
     }
 </script>
 </html>

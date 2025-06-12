@@ -95,6 +95,7 @@ if (!isset($_SESSION['usuario_id'])) {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
+
   </style>
 </head>
 
@@ -111,6 +112,21 @@ if (!isset($_SESSION['usuario_id'])) {
       <source src="../../audios/audios_animais/animals.mp3" type="audio/mp3">
     </audio>
   </header>
+
+  <div id="mascote-msg-fala" style="display: flex; justify-content: center; align-items: center; 
+background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; 
+width: 100%; height: 100%; z-index: 9999;">
+  <div style="position: relative; text-align: center;">
+    <img src="../../imagens/img_site/img_instrução.png" alt="Girafinha falando" 
+         style="max-width: 90vw; max-height: 90vh; border-radius: 20px;">
+    <button onclick="fecharMensagem()" 
+        style="position: absolute; bottom: 10px; right: 10px; 
+        background-color: #a545b4; color: white; border: none; 
+        border-radius: 20px; padding: 15px 30px; font-size: 1.4rem;">
+        Combinado !
+    </button>
+  </div>
+</div>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
     <div class="carousel-inner">
@@ -207,6 +223,30 @@ if (!isset($_SESSION['usuario_id'])) {
         </div>
       </div>
 
+       <div class="carousel-item">
+        <div class="card text-center shadow" data-name="giraffe" style="position: relative;">
+          <img src="../../imagens/img_animals/giraffe.png" class="card-img-top" alt="Girafa" onclick="playAudio('giraffe')">
+          <div class="card-body">
+            <h5 class="card-title">Giraffe</h5>
+            <div class="star-bar">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <audio id="giraffeAudio">
+              <source src="../../audios/audios_animais/dog.mp3" type="audio/mp3">
+            </audio>
+          </div>
+
+          <button class="arrow-button" style="left: 5px;" id="arrow-left-girafe" onclick="prevSlide()">
+            <i class="bi bi-arrow-left-circle-fill"></i>
+          </button>
+          <button class="arrow-button" style="right: 5px;" id="arrow-giraffe" onclick="nextSlide()">
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button>
+        </div>
+      </div>
+
             <div class="carousel-item">
         <div class="card text-center shadow" data-name="fish" style="position: relative;">
           <img src="../../imagens/img_animals/img_fish.jpg" class="card-img-top" alt="Peixe" onclick="playAudio('fish')">
@@ -268,13 +308,14 @@ if (!isset($_SESSION['usuario_id'])) {
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  const allSlides = ['cat', 'dog', 'cow', 'lion', 'fish', 'parabens'];
+  const allSlides = ['cat', 'dog', 'cow', 'lion', 'giraffe', 'fish', 'parabens'];
 
   let clickCounters = {
     cat: 0,
     dog: 0,
     cow: 0,
     lion: 0,
+    giraffe: 0,
     fish: 0
   };
 
@@ -402,6 +443,11 @@ if (!isset($_SESSION['usuario_id'])) {
     element.style.display = "none";
   }, 500);
 }
+
+  function fecharMensagem() {
+    document.getElementById("mascote-msg-fala").style.display = "none";
+  }
+
 </script>
 
 </body>

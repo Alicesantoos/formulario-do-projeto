@@ -112,6 +112,21 @@ if (!isset($_SESSION['usuario_id'])) {
     </audio>
   </header>
 
+    <div id="mascote-msg-fala" style="display: flex; justify-content: center; align-items: center; 
+background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; 
+width: 100%; height: 100%; z-index: 9999;">
+  <div style="position: relative; text-align: center;">
+    <img src="../../imagens/img_site/img_instrução.png" alt="Girafinha falando" 
+         style="max-width: 90vw; max-height: 90vh; border-radius: 20px;">
+    <button onclick="fecharMensagem()" 
+        style="position: absolute; bottom: 10px; right: 10px; 
+        background-color: #a545b4; color: white; border: none; 
+         border-radius: 20px; padding: 15px 30px; font-size: 1.4rem;">
+        Combinado !
+    </button>
+  </div>
+</div>
+
   <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
     <div class="carousel-inner">
 
@@ -402,6 +417,10 @@ if (!isset($_SESSION['usuario_id'])) {
     element.style.display = "none";
   }, 500);
 }
+  function fecharMensagem() {
+    document.getElementById("mascote-msg-fala").style.display = "none";
+  }
+
 </script>
 
 </body>
